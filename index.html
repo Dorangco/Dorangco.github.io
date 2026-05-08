@@ -362,7 +362,10 @@
         <span class="close-button" onclick="closeModal('quoteModal')">&times;</span>
         <h2 style="margin-bottom: 15px;">Request a Quote</h2>
         <form action="https://formsubmit.co/mlungisi@dorangco.co.za" method="POST">
+            <!-- FormSubmit Configuration -->
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Quotation Request">
+            <input type="hidden" name="_template" value="table">
 
             <div class="form-group">
                 <label>Email Address</label>
@@ -373,7 +376,6 @@
 
             <div class="form-group">
                 <label>Phone Number</label>
-                <!-- This placeholder now uses generic numbers -->
                 <input type="tel" name="phone" required
                 placeholder="0123456789 or +27123456789"
                 pattern="^(\+27|0)[6-8][0-9]{8}$">
