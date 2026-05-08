@@ -45,7 +45,7 @@ nav{
     height:45px;
     object-fit:contain;
 }
-    .logo h1 {
+.logo h1 {
     color: white;          
     font-weight: bold;    
     font-size: 28px;      
@@ -265,9 +265,10 @@ footer{
     cursor: pointer;
 }
 
-/* EMAIL VALIDATION STYLES */
-.form-group input:invalid:not(:placeholder-shown) {
-    border-color: #ff4d4d;
+/* VALIDATION STYLES (EMAIL + PHONE) */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border: 2px solid #ff4d4d;
 }
 
 .error-message {
@@ -294,7 +295,7 @@ footer{
 }
 
 </style>
-    <link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
@@ -372,19 +373,27 @@ footer{
         <h2 style="margin-bottom: 15px;">Request a Quote</h2>
         <form action="https://formsubmit.co/mlungisi@dorangco.co.za" method="POST">
             <input type="hidden" name="_captcha" value="false">
+
             <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" name="email" required placeholder="yourname@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                <span class="error-message">invalid email</span>
+                <input type="email" name="email" required placeholder="yourname@email.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <span class="error-message">Invalid email address</span>
             </div>
+
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="tel" name="phone" required placeholder="012 345 6789">
+                <input type="tel" name="phone" required
+                placeholder="0797729568 or +27797729568"
+                pattern="^(\+27|0)[6-8][0-9]{8}$">
+                <span class="error-message">Invalid South African phone number</span>
             </div>
+
             <div class="form-group">
                 <label>Quotation Request Details</label>
                 <textarea name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
             </div>
+
             <button type="submit" class="submit-btn">Send Request</button>
         </form>
     </div>
@@ -397,9 +406,9 @@ footer{
         <p style="margin-top:10px; line-height: 1.6;">DorangCo is a fully compliant and accredited construction firm. We guarantee high-quality workmanship and structural integrity on all projects.</p>
         <ul class="info-list">
             <li><strong>Registration Number:</strong> 2023/977476/07</li>
-            <li><strong>CIDB Registered</strong> (Construction Industry Development Board)</li>
-            <li><strong>CSD Verified</strong> (Central Supplier Database)</li>
-            <li><strong>Workmanship Guarantee:</strong> We stand by every brick we lay and every project we manage.</li>
+            <li><strong>CIDB Registered</strong></li>
+            <li><strong>CSD Verified</strong></li>
+            <li><strong>Workmanship Guarantee</strong></li>
         </ul>
         <button onclick="closeModal('infoModal'); openModal('quoteModal')" class="btn" style="width:100%">Request a Quote Now</button>
     </div>
@@ -409,31 +418,26 @@ footer{
     <div class="modal-content">
         <span class="close-button" onclick="closeModal('contactModal')">&times;</span>
         <h2>Our Contact Details</h2>
-        <div style="margin-top: 20px;">
-            <p><strong>Direct Line:</strong> <a href="tel:+27797729568" style="color:#d4a017; text-decoration:none;">+27 79 772 9568</a></p>
-            <p style="margin-top: 10px;"><strong>Email:</strong> <a href="mailto:mlungisi@dorangco.co.za" style="color:#d4a017; text-decoration:none;">mlungisi@dorangco.co.za</a></p>
-            <p style="margin-top: 10px;"><strong>Location:</strong> Durban, KwaZulu-Natal, South Africa</p>
-            <p style="margin-top: 10px;"><strong>Business Hours:</strong> Mon - Fri: 08:00 - 17:00</p>
-        </div>
+        <p><strong>Phone:</strong> +27 79 772 9568</p>
+        <p><strong>Email:</strong> mlungisi@dorangco.co.za</p>
         <button onclick="closeModal('contactModal')" class="btn" style="width:100%; margin-top:20px;">Close</button>
     </div>
 </div>
 
 <script>
-    function openModal(id) {
-        document.getElementById(id).style.display = "block";
-    }
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
 
-    function closeModal(id) {
-        document.getElementById(id).style.display = "none";
-    }
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
 
-    // Close modal if user clicks outside of any modal
-    window.onclick = function(event) {
-        if (event.target.className === 'modal') {
-            event.target.style.display = "none";
-        }
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = "none";
     }
+}
 </script>
 
 </body>
