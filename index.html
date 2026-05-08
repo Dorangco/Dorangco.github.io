@@ -1,301 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DorangCo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DorangCo</title>
 
-<style>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior:smooth;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior:smooth;
-}
+        body{
+            background:#f4f4f4;
+            color:#333;
+        }
 
-body{
-    background:#f4f4f4;
-    color:#333;
-}
+        /* NAVBAR */
+        nav{
+            background:#111;
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
 
-/* NAVBAR */
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
 
-nav{
-    background:#111;
-    padding:20px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        .logo img{
+            width:auto;
+            height:45px;
+            object-fit:contain;
+        }
+        .logo h1 {
+            color: white;          
+            font-weight: bold;    
+            font-size: 28px;      
+            margin: 0;            
+        }
 
-/* LOGO ADDED */
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
 
-.logo img{
-    width:auto;
-    height:45px;
-    object-fit:contain;
-}
-.logo h1 {
-    color: white;          
-    font-weight: bold;    
-    font-size: 28px;      
-    margin: 0;            
-}
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            transition:0.3s;
+        }
 
-/* NAV LINKS */
+        nav ul li a:hover{
+            color:#d4a017;
+        }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
+        /* HERO SECTION */
+        .hero{
+            height:90vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+            
+            background-size:cover;
+            background-position:center;
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    transition:0.3s;
-}
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
 
-nav ul li a:hover{
-    color:#d4a017;
-}
+        .hero-content h2{
+            font-size:55px;
+            margin-bottom:20px;
+        }
 
-/* HERO SECTION */
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
 
-.hero{
-    height:90vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.6),
-    rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
-    
-    background-size:cover;
-    background-position:center;
+        .hero-content a{
+            background:#d4a017;
+            color:white;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:5px;
+            font-size:18px;
+            transition:0.3s;
+        }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
+        .hero-content a:hover{
+            background:#b38712;
+        }
 
-.hero-content h2{
-    font-size:55px;
-    margin-bottom:20px;
-}
+        /* SERVICES */
+        .services{
+            padding:80px 50px;
+            text-align:center;
+            background:white;
+        }
 
-.hero-content p{
-    font-size:20px;
-    margin-bottom:30px;
-}
+        .services h2{
+            font-size:40px;
+            margin-bottom:50px;
+        }
 
-.hero-content a{
-    background:#d4a017;
-    color:white;
-    padding:15px 30px;
-    text-decoration:none;
-    border-radius:5px;
-    font-size:18px;
-    transition:0.3s;
-}
+        .service-boxes{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
 
-.hero-content a:hover{
-    background:#b38712;
-}
+        .box{
+            background:#f9f9f9;
+            padding:40px 20px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
 
-/* SERVICES */
+        .box:hover{
+            transform:translateY(-10px);
+        }
 
-.services{
-    padding:80px 50px;
-    text-align:center;
-    background:white;
-}
+        .box h3{
+            margin-bottom:15px;
+            color:#111;
+        }
 
-.services h2{
-    font-size:40px;
-    margin-bottom:50px;
-}
+        /* ABOUT */
+        .about{
+            padding:80px 50px;
+            background:#222;
+            color:white;
+            text-align:center;
+        }
 
-.service-boxes{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
+        .about h2{
+            margin-bottom:20px;
+            font-size:40px;
+        }
 
-.box{
-    background:#f9f9f9;
-    padding:40px 20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        /* CONTACT */
+        .contact{
+            padding:80px 50px;
+            text-align:center;
+            background:white;
+        }
 
-.box:hover{
-    transform:translateY(-10px);
-}
+        .contact h2{
+            margin-bottom:20px;
+            font-size:40px;
+        }
 
-.box h3{
-    margin-bottom:15px;
-    color:#111;
-}
+        .contact p{
+            margin:10px 0;
+            font-size:18px;
+        }
 
-/* ABOUT */
+        .contact a{
+            color:#d4a017;
+            text-decoration:none;
+        }
 
-.about{
-    padding:80px 50px;
-    background:#222;
-    color:white;
-    text-align:center;
-}
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
 
-.about h2{
-    margin-bottom:20px;
-    font-size:40px;
-}
+        /* BUTTONS */
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            background:#d4a017;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+            transition:0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
 
-/* CONTACT */
+        .btn:hover{
+            background:#b38712;
+        }
 
-.contact{
-    padding:80px 50px;
-    text-align:center;
-    background:white;
-}
+        /* MODAL STYLES */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
 
-.contact h2{
-    margin-bottom:20px;
-    font-size:40px;
-}
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            text-align: left;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
 
-.contact p{
-    margin:10px 0;
-    font-size:18px;
-}
+        .close-button {
+            position: absolute;
+            right: 20px; top: 10px;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
-.contact a{
-    color:#d4a017;
-    text-decoration:none;
-}
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+        }
 
-/* FOOTER */
+        .submit-btn {
+            background: #d4a017;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+        /* VALIDATION STYLES */
+        .form-group input:invalid:not(:placeholder-shown),
+        .form-group textarea:invalid:not(:placeholder-shown) {
+            border: 2px solid #ff4d4d;
+        }
 
-/* BUTTONS */
+        .error-message {
+            color: #ff4d4d;
+            font-size: 12px;
+            display: none;
+            margin-top: 5px;
+            font-weight: bold;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#d4a017;
-    color:white;
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:5px;
-    transition:0.3s;
-    cursor: pointer;
-    border: none;
-    font-size: 14px;
-}
+        .form-group input:invalid:not(:placeholder-shown) + .error-message {
+            display: block;
+        }
 
-.btn:hover{
-    background:#b38712;
-}
+        /* INFO LIST STYLES */
+        .info-list { list-style: none; margin-top: 15px; }
+        .info-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .info-list li::before { content: '✓'; position: absolute; left: 0; color: #d4a017; font-weight: bold; }
 
-/* MODAL STYLES */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
-}
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            nav{ flex-direction:column; gap:15px; }
+            .hero-content h2{ font-size:40px; }
+        }
 
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 30px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    text-align: left;
-    max-height: 85vh;
-    overflow-y: auto;
-}
-
-.close-button {
-    position: absolute;
-    right: 20px; top: 10px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.form-group { margin-bottom: 15px; }
-.form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
-.form-group input, .form-group textarea {
-    width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
-}
-
-.submit-btn {
-    background: #d4a017;
-    color: white;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* VALIDATION STYLES (EMAIL + PHONE) */
-.form-group input:invalid:not(:placeholder-shown),
-.form-group textarea:invalid:not(:placeholder-shown) {
-    border: 2px solid #ff4d4d;
-}
-
-.error-message {
-    color: #ff4d4d;
-    font-size: 12px;
-    display: none;
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-.form-group input:invalid:not(:placeholder-shown) + .error-message {
-    display: block;
-}
-
-/* INFO LIST STYLES */
-.info-list { list-style: none; margin-top: 15px; }
-.info-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-.info-list li::before { content: '✓'; position: absolute; left: 0; color: #d4a017; font-weight: bold; }
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    nav{ flex-direction:column; gap:15px; }
-    .hero-content h2{ font-size:40px; }
-}
-
-</style>
-<link rel="icon" type="image/png" href="favicon.png">
+    </style>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
@@ -350,7 +339,7 @@ footer{
         DorangCo is committed to delivering professional,
         reliable and modern construction services across Durban, KwaZulu-Natal, and the rest of South Africa.
         We focus on quality workmanship, client satisfaction and
-        innovous solutions for every project.
+        innovative solutions for every project.
     </p>
     <button onclick="openModal('quoteModal')" class="btn">Work With Us</button>
 </section>
@@ -358,7 +347,7 @@ footer{
 <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:mlungisi@dorangco.co.za">mlungisi@dorangco.co.za</a></p>
-    <p>Phone: <a href="tel:+27797729568">+27 79 772 9568</a></p>
+    <p>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></p>
     <p>Durban, South Africa</p>
     <a href="#home" class="btn">Back To Top</a>
 </section>
@@ -367,6 +356,7 @@ footer{
     <p>© 2026 DorangCo. All Rights Reserved.</p>
 </footer>
 
+<!-- MODALS -->
 <div id="quoteModal" class="modal">
     <div class="modal-content">
         <span class="close-button" onclick="closeModal('quoteModal')">&times;</span>
@@ -384,7 +374,7 @@ footer{
             <div class="form-group">
                 <label>Phone Number</label>
                 <input type="tel" name="phone" required
-                placeholder="0797729568 or +27797729568"
+                placeholder="0123456789 or +27123456789"
                 pattern="^(\+27|0)[6-8][0-9]{8}$">
                 <span class="error-message">Invalid South African phone number</span>
             </div>
@@ -414,10 +404,8 @@ footer{
     </div>
 </div>
 
-<!-- IMPROVED CONTACT MODAL -->
 <div id="contactModal" class="modal">
     <div class="modal-content" style="padding: 0; overflow: hidden; border-radius: 12px; border: none;">
-        <!-- Header -->
         <div style="background: #d4a017; padding: 25px 30px; color: white; position: relative;">
             <span class="close-button" onclick="closeModal('contactModal')" style="color: white; top: 15px; right: 20px;">&times;</span>
             <h2 style="margin: 0; font-size: 24px; letter-spacing: 1px;">Get In Touch</h2>
@@ -425,18 +413,16 @@ footer{
         </div>
 
         <div style="padding: 30px;">
-            <!-- Phone -->
             <div style="display: flex; align-items: center; margin-bottom: 25px;">
                 <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
                     📞
                 </div>
                 <div>
                     <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Call Us Directly</p>
-                    <a href="tel:+27797729568" style="text-decoration: none; color: #111; font-weight: bold; font-size: 18px;">+27 79 772 9568</a>
+                    <a href="tel:+27123456789" style="text-decoration: none; color: #111; font-weight: bold; font-size: 18px;">+27 12 345 6789</a>
                 </div>
             </div>
 
-            <!-- Email -->
             <div style="display: flex; align-items: center; margin-bottom: 25px;">
                 <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
                     ✉️
@@ -447,7 +433,6 @@ footer{
                 </div>
             </div>
 
-            <!-- Location -->
             <div style="display: flex; align-items: center; margin-bottom: 5px;">
                 <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
                     📍
@@ -460,7 +445,6 @@ footer{
 
             <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
 
-            <!-- CTA Buttons -->
             <div style="display: flex; gap: 12px;">
                 <button onclick="closeModal('contactModal'); openModal('quoteModal')" class="submit-btn" style="flex: 2; margin: 0;">Request a Quote</button>
                 <button onclick="closeModal('contactModal')" class="btn" style="flex: 1; margin: 0; background: #333;">Close</button>
