@@ -1,267 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DorangCo</title>
 
-<title>DorangCo | Construction & General Services</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior:smooth;
+        }
 
-<meta name="description" content="DorangCo is a South African construction and general services company delivering quality workmanship, reliability, and professionalism.">
-<meta name="keywords" content="DorangCo, construction company, building services, renovations, South Africa">
-<meta name="author" content="DorangCo">
+        body{
+            background:#f4f4f4;
+            color:#333;
+        }
 
-<style>
-/* =====================
-   GLOBAL STYLES
-===================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+        /* NAVBAR */
+        nav{
+            background:#111;
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
 
-body{
-    background:#f4f4f4;
-    color:#333;
-    line-height:1.6;
-}
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
 
-/* =====================
-   HEADER
-===================== */
-header{
-    background:#111;
-    color:#fff;
-    padding:20px 10%;
-}
+        .logo img{
+            width:auto;
+            height:45px;
+            object-fit:contain;
+        }
+        .logo h1 {
+            color: white;          
+            font-weight: bold;    
+            font-size: 28px;      
+            margin: 0;            
+        }
 
-.header-container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
 
-header img{
-    height:55px;
-}
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+            transition:0.3s;
+        }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
-}
+        nav ul li a:hover{
+            color:#d4a017;
+        }
 
-nav a:hover{
-    text-decoration:underline;
-}
+        /* HERO SECTION */
+        .hero{
+            height:90vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+            
+            background-size:cover;
+            background-position:center;
 
-/* =====================
-   HERO SECTION
-===================== */
-.hero{
-    background:#222;
-    color:#fff;
-    padding:80px 10%;
-    text-align:center;
-}
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
 
-.hero h1{
-    font-size:36px;
-    margin-bottom:15px;
-}
+        .hero-content h2{
+            font-size:55px;
+            margin-bottom:20px;
+        }
 
-.hero p{
-    font-size:18px;
-    max-width:700px;
-    margin:0 auto;
-}
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
 
-/* =====================
-   SECTIONS
-===================== */
-section{
-    padding:60px 10%;
-    background:#fff;
-    margin-bottom:10px;
-}
+        .hero-content a{
+            background:#d4a017;
+            color:white;
+            padding:15px 30px;
+            text-decoration:none;
+            border-radius:5px;
+            font-size:18px;
+            transition:0.3s;
+        }
 
-section h2{
-    font-size:28px;
-    margin-bottom:20px;
-    color:#111;
-}
+        .hero-content a:hover{
+            background:#b38712;
+        }
 
-section p{
-    font-size:16px;
-    max-width:900px;
-}
+        /* SERVICES */
+        .services{
+            padding:80px 50px;
+            text-align:center;
+            background:white;
+        }
 
-/* =====================
-   SERVICES
-===================== */
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:30px;
-}
+        .services h2{
+            font-size:40px;
+            margin-bottom:50px;
+        }
 
-.service-box{
-    background:#f8f8f8;
-    padding:25px;
-    border:1px solid #ddd;
-}
+        .service-boxes{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
 
-.service-box h3{
-    margin-bottom:10px;
-    font-size:18px;
-}
+        .box{
+            background:#f9f9f9;
+            padding:40px 20px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
 
-/* =====================
-   CONTACT
-===================== */
-.contact-box{
-    background:#f8f8f8;
-    padding:30px;
-    border:1px solid #ddd;
-    max-width:600px;
-}
+        .box:hover{
+            transform:translateY(-10px);
+        }
 
-.contact-box p{
-    margin-bottom:10px;
-}
+        .box h3{
+            margin-bottom:15px;
+            color:#111;
+        }
 
-/* =====================
-   FOOTER
-===================== */
-footer{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:20px 10%;
-    font-size:14px;
-}
+        /* ABOUT */
+        .about{
+            padding:80px 50px;
+            background:#222;
+            color:white;
+            text-align:center;
+        }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media(max-width:768px){
-    .header-container{
-        flex-direction:column;
-        text-align:center;
-    }
+        .about h2{
+            margin-bottom:20px;
+            font-size:40px;
+        }
 
-    nav{
-        margin-top:15px;
-    }
+        /* CONTACT */
+        .contact{
+            padding:80px 50px;
+            text-align:center;
+            background:white;
+        }
 
-    nav a{
-        margin:0 10px;
-    }
+        .contact h2{
+            margin-bottom:20px;
+            font-size:40px;
+        }
 
-    .hero h1{
-        font-size:28px;
-    }
-}
-</style>
+        .contact p{
+            margin:10px 0;
+            font-size:18px;
+        }
+
+        .contact a{
+            color:#d4a017;
+            text-decoration:none;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* BUTTONS */
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            background:#d4a017;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+            transition:0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn:hover{
+            background:#b38712;
+        }
+
+        /* MODAL STYLES */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            text-align: left;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px; top: 10px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+        }
+
+        .submit-btn {
+            background: #d4a017;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* VALIDATION STYLES */
+        .form-group input:invalid:not(:placeholder-shown),
+        .form-group textarea:invalid:not(:placeholder-shown) {
+            border: 2px solid #ff4d4d;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 12px;
+            display: none;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input:invalid:not(:placeholder-shown) + .error-message {
+            display: block;
+        }
+
+        /* INFO LIST STYLES */
+        .info-list { list-style: none; margin-top: 15px; }
+        .info-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .info-list li::before { content: '✓'; position: absolute; left: 0; color: #d4a017; font-weight: bold; }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            nav{ flex-direction:column; gap:15px; }
+            .hero-content h2{ font-size:40px; }
+        }
+
+    </style>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
 
-<!-- =====================
-     HEADER
-===================== -->
-<header>
-    <div class="header-container">
-        <img src="logo.png" alt="DorangCo Logo">
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<nav>
+    <div class="logo">
+        <img src="favicon.png" alt="DorangCo Logo">
+        <h1>DorangCo</h1>
     </div>
-</header>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-<!-- =====================
-     HERO
-===================== -->
 <section class="hero" id="home">
-    <h1>DorangCo</h1>
-    <p>
-        A professional South African construction and general services company
-        committed to quality workmanship, reliability, and client satisfaction.
-    </p>
+    <div class="hero-content">
+        <h2>Building The Future</h2>
+        <p>Professional Construction & Business Solutions</p>
+        <a href="#contact">Get Started</a>
+    </div>
 </section>
 
-<!-- =====================
-     ABOUT
-===================== -->
-<section id="about">
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+        <div class="box">
+            <h3>Construction</h3>
+            <p>Quality building and infrastructure solutions for residential and commercial projects.</p>
+            <button onclick="openModal('quoteModal')" class="btn">Request Service</button>
+        </div>
+
+        <div class="box">
+            <h3>Renovations</h3>
+            <p>Modern upgrades and improvements for homes, offices and business spaces.</p>
+            <button onclick="openModal('infoModal')" class="btn">Learn More</button>
+        </div>
+
+        <div class="box">
+            <h3>Project Management</h3>
+            <p>Professional planning, supervision and successful execution of projects.</p>
+            <button onclick="openModal('contactModal')" class="btn">Contact Us</button>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
     <h2>About Us</h2>
     <p>
-        DorangCo is a South African registered company providing construction and
-        general services. We are dedicated to delivering projects that meet
-        industry standards while maintaining professionalism, transparency,
-        and efficiency.
+        DorangCo is committed to delivering professional,
+        reliable and modern construction services across Durban, KwaZulu-Natal, and the rest of South Africa.
+        We focus on quality workmanship, client satisfaction and
+        innovative solutions for every project.
     </p>
+    <button onclick="openModal('quoteModal')" class="btn">Work With Us</button>
 </section>
 
-<!-- =====================
-     SERVICES
-===================== -->
-<section id="services">
-    <h2>Our Services</h2>
-
-    <div class="services">
-        <div class="service-box">
-            <h3>Construction Services</h3>
-            <p>
-                Residential and commercial construction with a focus on quality,
-                safety, and compliance.
-            </p>
-        </div>
-
-        <div class="service-box">
-            <h3>Renovations & Maintenance</h3>
-            <p>
-                Building renovations, repairs, and maintenance services tailored
-                to client needs.
-            </p>
-        </div>
-
-        <div class="service-box">
-            <h3>General Services</h3>
-            <p>
-                Support services related to construction and property
-                management projects.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- =====================
-     CONTACT
-===================== -->
-<section id="contact">
+<section class="contact" id="contact">
     <h2>Contact Us</h2>
-
-    <div class="contact-box">
-        <p><strong>Company Name:</strong> DorangCo</p>
-        <p><strong>Email:</strong> info@dorangco.co.za</p>
-        <p><strong>Phone:</strong> 0XX XXX XXXX</p>
-        <p><strong>Location:</strong> South Africa</p>
-    </div>
+    <p>Email: <a href="mailto:mlungisi@dorangco.co.za">mlungisi@dorangco.co.za</a></p>
+    <p>Phone: <a href="tel:+27797729568">+27 79 772 9568</a></p>
+    <p>Durban, South Africa</p>
+    <a href="#home" class="btn">Back To Top</a>
 </section>
 
-<!-- =====================
-     FOOTER
-===================== -->
 <footer>
-    © 2026 DorangCo. All Rights Reserved.
+    <p>© 2026 DorangCo. All Rights Reserved.</p>
 </footer>
+
+<div id="quoteModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('quoteModal')">&times;</span>
+        <h2 style="margin-bottom: 15px;">Request a Quote</h2>
+        <form action="https://formsubmit.co/mlungisi@dorangco.co.za" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Quotation Request">
+            <input type="hidden" name="_template" value="table">
+            
+            <input type="hidden" name="_next" value="https://dorangco.github.io/success.html">
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" required placeholder="yourname@email.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <span class="error-message">Invalid email address</span>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" required
+                placeholder="0123456789 or +27123456789"
+                pattern="^(\+27|0)[6-8][0-9]{8}$">
+                <span class="error-message">Invalid South African phone number</span>
+            </div>
+
+            <div class="form-group">
+                <label>Quotation Request Details</label>
+                <textarea name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Request</button>
+        </form>
+    </div>
+</div>
+
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('infoModal')">&times;</span>
+        <h2>Company Information</h2>
+        <p style="margin-top:10px; line-height: 1.6;">DorangCo is a fully compliant and accredited construction firm. We guarantee high-quality workmanship and structural integrity on all projects.</p>
+        <ul class="info-list">
+            <li><strong>Registration Number:</strong> 2023/977476/07</li>
+            <li><strong>CIDB Registered</strong></li>
+            <li><strong>CSD Verified</strong></li>
+            <li><strong>Workmanship Guarantee</strong></li>
+        </ul>
+        <button onclick="closeModal('infoModal'); openModal('quoteModal')" class="btn" style="width:100%">Request a Quote Now</button>
+    </div>
+</div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content" style="padding: 0; overflow: hidden; border-radius: 12px; border: none;">
+        <div style="background: #d4a017; padding: 25px 30px; color: white; position: relative;">
+            <span class="close-button" onclick="closeModal('contactModal')" style="color: white; top: 15px; right: 20px;">&times;</span>
+            <h2 style="margin: 0; font-size: 24px; letter-spacing: 1px;">Get In Touch</h2>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Professional Solutions & Consultations</p>
+        </div>
+
+        <div style="padding: 30px;">
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    📞
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Call Us Directly</p>
+                    <a href="tel:+27797729568" style="text-decoration: none; color: #111; font-weight: bold; font-size: 18px;">+27 79 772 9568</a>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    ✉️
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Send an Email</p>
+                    <a href="mailto:mlungisi@dorangco.co.za" style="text-decoration: none; color: #111; font-weight: bold; font-size: 16px;">mlungisi@dorangco.co.za</a>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    📍
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Head Office</p>
+                    <p style="margin: 0; color: #111; font-weight: bold; font-size: 16px;">Durban, South Africa</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+            <div style="display: flex; gap: 12px;">
+                <button onclick="closeModal('contactModal'); openModal('quoteModal')" class="submit-btn" style="flex: 2; margin: 0;">Request a Quote</button>
+                <button onclick="closeModal('contactModal')" class="btn" style="flex: 1; margin: 0; background: #333;">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
