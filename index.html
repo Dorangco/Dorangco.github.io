@@ -414,13 +414,58 @@ footer{
     </div>
 </div>
 
+<!-- IMPROVED CONTACT MODAL -->
 <div id="contactModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('contactModal')">&times;</span>
-        <h2>Our Contact Details</h2>
-        <p><strong>Phone:</strong> +27 79 772 9568</p>
-        <p><strong>Email:</strong> mlungisi@dorangco.co.za</p>
-        <button onclick="closeModal('contactModal')" class="btn" style="width:100%; margin-top:20px;">Close</button>
+    <div class="modal-content" style="padding: 0; overflow: hidden; border-radius: 12px; border: none;">
+        <!-- Header -->
+        <div style="background: #d4a017; padding: 25px 30px; color: white; position: relative;">
+            <span class="close-button" onclick="closeModal('contactModal')" style="color: white; top: 15px; right: 20px;">&times;</span>
+            <h2 style="margin: 0; font-size: 24px; letter-spacing: 1px;">Get In Touch</h2>
+            <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Professional Solutions & Consultations</p>
+        </div>
+
+        <div style="padding: 30px;">
+            <!-- Phone -->
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    📞
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Call Us Directly</p>
+                    <a href="tel:+27797729568" style="text-decoration: none; color: #111; font-weight: bold; font-size: 18px;">+27 79 772 9568</a>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    ✉️
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Send an Email</p>
+                    <a href="mailto:mlungisi@dorangco.co.za" style="text-decoration: none; color: #111; font-weight: bold; font-size: 16px;">mlungisi@dorangco.co.za</a>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                <div style="background: #fdf6e7; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 20px; border: 1px solid #faebcc;">
+                    📍
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Head Office</p>
+                    <p style="margin: 0; color: #111; font-weight: bold; font-size: 16px;">Durban, South Africa</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+            <!-- CTA Buttons -->
+            <div style="display: flex; gap: 12px;">
+                <button onclick="closeModal('contactModal'); openModal('quoteModal')" class="submit-btn" style="flex: 2; margin: 0;">Request a Quote</button>
+                <button onclick="closeModal('contactModal')" class="btn" style="flex: 1; margin: 0; background: #333;">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
