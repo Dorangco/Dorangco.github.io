@@ -46,7 +46,7 @@ nav{
     object-fit:contain;
 }
     .logo h1 {
-    color: white;         
+    color: white;          
     font-weight: bold;    
     font-size: 28px;      
     margin: 0;            
@@ -265,6 +265,23 @@ footer{
     cursor: pointer;
 }
 
+/* EMAIL VALIDATION STYLES */
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ff4d4d;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.form-group input:invalid:not(:placeholder-shown) + .error-message {
+    display: block;
+}
+
 /* INFO LIST STYLES */
 .info-list { list-style: none; margin-top: 15px; }
 .info-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
@@ -332,7 +349,7 @@ footer{
         DorangCo is committed to delivering professional,
         reliable and modern construction services across Durban, KwaZulu-Natal, and the rest of South Africa.
         We focus on quality workmanship, client satisfaction and
-        innovative solutions for every project.
+        innovous solutions for every project.
     </p>
     <button onclick="openModal('quoteModal')" class="btn">Work With Us</button>
 </section>
@@ -357,7 +374,8 @@ footer{
             <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" name="email" required placeholder="yourname@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter a valid email address">
+                <input type="email" name="email" required placeholder="yourname@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <span class="error-message">invalid email</span>
             </div>
             <div class="form-group">
                 <label>Phone Number</label>
